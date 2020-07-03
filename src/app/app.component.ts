@@ -7,6 +7,7 @@ import { Person } from './person.interface';
   templateUrl: './app.component.html'
 })
 export class AppComponent  {
+  // Array coercion data
   person1 = {
     name: 'John Smith',
     age: 35
@@ -21,4 +22,9 @@ export class AppComponent  {
     name: 'Captain America',
     age: 33
   };
+
+  // boolean coercion data
+  booleanValue = true;
+  nullValue = null;
+  undefinedValue = undefined;
 }

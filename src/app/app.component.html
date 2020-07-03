@@ -1,25 +1,53 @@
 <h1>@angular/cdk/coercion</h1>
 <ul>
   <li><a href="#array-coercion">Array Coercion</a></li>
+  <li><a href="#boolean-coercion">Boolean Coercion</a></li>
 </ul>
-<section id="array-coercion">
+<section class="wrapper" id="array-coercion">
   <h2>Array Coercion</h2>
   <section>
-    <h3>Array: String</h3>
+    <h3>Array&lt;string&gt;</h3>
     <array-coercion
       [strings]="['array item 1', 'array item 2']"
     ></array-coercion>
   </section>
   <section>
-    <h3>Single Value: String</h3>
+    <h3>string</h3>
     <array-coercion strings="single item"></array-coercion>
   </section>
   <section>
-    <h3>Array: Custom Type (Person)</h3>
+    <h3>Array&lt;Person&gt;</h3>
     <array-coercion [persons]="[person1, person2]"></array-coercion>
   </section>
   <section>
-    <h3>Single Value: Custom Type (Person)</h3>
+    <h3>Person</h3>
     <array-coercion [persons]="person3"></array-coercion>
+  </section>
+</section>
+<section class="wrapper" id="boolean-coercion">
+  <h2>Boolean Coercion</h2>
+  <section>
+    <h3>boolean</h3>
+    <boolean-coercion [someFlag]="booleanValue"></boolean-coercion>
+  </section>
+  <section>
+    <h3>string - true</h3>
+    <boolean-coercion someFlag="true"></boolean-coercion>
+  </section>
+  <section>
+    <h3>string - false</h3>
+    <boolean-coercion someFlag="false"></boolean-coercion>
+  </section>
+  <section>
+    <h3>string - random</h3>
+    <boolean-coercion someFlag="random"></boolean-coercion>
+  </section>
+  <section>
+    <h3>null</h3>
+    <boolean-coercion [someFlag]="nullValue"></boolean-coercion>
+  </section>
+  <section>
+    <h3>undefined</h3>
+    <boolean-coercion [someFlag]="undefinedValue"></boolean-coercion>
   </section>
 </section>

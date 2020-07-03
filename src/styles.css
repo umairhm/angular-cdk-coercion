@@ -2,3 +2,10 @@
 body {
   font-family: Lato;
 }
+
+section.wrapper {
+  padding: 16px;
+  background: #dedede;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
