@@ -19,27 +19,28 @@ import { Person } from './person.interface';
   `
 })
 export class ArrayCoercionComponent  {
-  /* Start: Example code for an array of strings */
+  // Declare private properties to hold coerced arrays
   private _coercedStringArray: Array<string>;
-  get coercedStringArray(): Array<string> {
-    return this._coercedStringArray;
-  }
-  
+  private _coercedPersonArray: Array<Person>;
+
+  // Allow both singular and array values to be passed
+  // Use coerceArray method to convert singular to array
   @Input()
   set strings(val: string | Array<string>) {
     this._coercedStringArray = coerceArray(val);
-  }
-  /* End: Example code for an array of strings */
-
-  /* Start: Example code for an array of a custom type Person */
-  private _coercedPersonArray: Array<Person>;
-  get coercedPersonArray(): Array<Person> {
-    return this._coercedPersonArray;
   }
 
   @Input()
   set persons(val: Person | Array<Person>) {
     this._coercedPersonArray = coerceArray(val);
   }
-  /* End: Example code for an array of a custom type Person */
+  
+  // Use getters to return coerced arrays to be used in templates
+  get coercedStringArray(): Array<string> {
+    return this._coercedStringArray;
+  }
+
+  get coercedPersonArray(): Array<Person> {
+    return this._coercedPersonArray;
+  }
 }
