@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 import { Person } from './person.interface';
 
@@ -6,7 +6,10 @@ import { Person } from './person.interface';
   selector: 'my-app',
   templateUrl: './app.component.html'
 })
-export class AppComponent  {
+export class AppComponent implements OnInit {
+  nullValue = null;
+  undefinedValue = undefined;
+
   // Array coercion data
   person1 = {
     name: 'John Smith',
@@ -26,6 +29,14 @@ export class AppComponent  {
   // boolean coercion data
   booleanTrue = true;
   booleanFalse = false;
-  nullValue = null;
-  undefinedValue = undefined;
+
+  // element coercion
+  htmlElement: HTMLElement;
+  @ViewChild('h1', { read: ElementRef, static: true }) elementRef: ElementRef;
+
+  ngOnInit() {
+    this.htmlElement = document.createElement('p');
+    this.htmlElement.innerHTML = 
+      'This is a <strong>vanilla</strong> HTMLParagraphElement';
+  }
 }

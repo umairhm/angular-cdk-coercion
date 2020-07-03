@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ArrayCoercionComponent } from './array-coercion.component';
 import { BooleanCoercionComponent } from './boolean-coercion.component';
 import { CssPixelCoercionComponent } from './css-pixel-coercion.component';
+import { ElementCoercionComponent } from './element-coercion.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
@@ -13,7 +14,8 @@ import { CssPixelCoercionComponent } from './css-pixel-coercion.component';
     AppComponent,
     ArrayCoercionComponent,
     BooleanCoercionComponent,
-    CssPixelCoercionComponent
+    CssPixelCoercionComponent,
+    ElementCoercionComponent
   ],
   bootstrap:    [ AppComponent ]
 })
