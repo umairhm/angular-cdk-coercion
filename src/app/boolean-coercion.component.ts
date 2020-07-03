@@ -11,8 +11,8 @@ export class BooleanCoercionComponent  {
   // Declare private properties to hold coerced boolean value
   private _coercedBoolean: boolean;
 
-  // Use getters to return private properties
-  // Use setters to call coerceArray method and convert passed values to arrays
+  // Use getter to return private property
+  // Use setter to call coerceArray method and convert passed value to boolean
   @Input()
   get someFlag(): boolean {
     return this._coercedBoolean;

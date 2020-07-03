@@ -4,6 +4,7 @@
   <li><a href="#boolean-coercion">Boolean Coercion</a></li>
   <li><a href="#css-pixel-coercion">CSS Pixel Coercion</a></li>
   <li><a href="#element-coercion">Element Coercion</a></li>
+  <li><a href="#number-coercion">Number Coercion</a></li>
 </ul>
 <section class="wrapper" id="array-coercion">
   <h2>Array Coercion</h2>
@@ -89,5 +90,24 @@
   <section>
     <h3>ElementRef</h3>
     <element-coercion [element]="elementRef"></element-coercion>
+  </section>
+</section>
+<section class="wrapper" id="number-coercion">
+  <h2>Number Coercion</h2>
+  <section>
+    <h3>number</h3>
+    <number-coercion [count]="10"></number-coercion>
+  </section>
+  <section>
+    <h3>strings</h3>
+    <number-coercion count="10"></number-coercion>
+  </section>
+  <section>
+    <h3>null</h3>
+    <number-coercion [count]="nullValue"></number-coercion>
+  </section>
+  <section>
+    <h3>undefined</h3>
+    <number-coercion [count]="undefinedValue"></number-coercion>
   </section>
 </section>

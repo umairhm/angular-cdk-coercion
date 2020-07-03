@@ -19,8 +19,8 @@ export class CssPixelCoercionComponent  {
   // Declare private properties to hold coerced pixel value
   private _coercedPixel: string;
 
-  // Use getters to return private properties
-  // Use setters to call coerceArray method and convert passed values to arrays
+  // Use getter to return private property
+  // Use setter to call coerceArray method and convert passed value to pixel value
   @Input()
   get cssPixel(): string {
     return this._coercedPixel;

@@ -16,8 +16,8 @@ export class ElementCoercionComponent  {
 
   isElementRef = false;
 
-  // Use getters to return private properties
-  // Use setters to call coerceElement method and convert passed values to native element
+  // Use getters to return private property
+  // Use setters to call coerceElement method and convert passed value to native element
   @Input()
   get element(): Element {
     return this._coercedElement;
