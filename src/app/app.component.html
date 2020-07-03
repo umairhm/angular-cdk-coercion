@@ -2,6 +2,7 @@
 <ul>
   <li><a href="#array-coercion">Array Coercion</a></li>
   <li><a href="#boolean-coercion">Boolean Coercion</a></li>
+  <li><a href="#css-pixel-coercion">CSS Pixel Coercion</a></li>
 </ul>
 <section class="wrapper" id="array-coercion">
   <h2>Array Coercion</h2>
@@ -57,5 +58,24 @@
   <section>
     <h3>undefined</h3>
     <boolean-coercion [someFlag]="undefinedValue"></boolean-coercion>
+  </section>
+</section>
+<section class="wrapper" id="css-pixel-coercion">
+  <h2>CSS Pixel Coercion</h2>
+  <section>
+    <h3>10px</h3>
+    <css-pixel-coercion [cssPixel]="'10px'"></css-pixel-coercion>
+  </section>
+  <section>
+    <h3>10</h3>
+    <css-pixel-coercion [cssPixel]="10"></css-pixel-coercion>
+  </section>
+  <section>
+    <h3>1em</h3>
+    <css-pixel-coercion [cssPixel]="'1em'"></css-pixel-coercion>
+  </section>
+  <section>
+    <h3>null</h3>
+    <css-pixel-coercion [cssPixel]="nullValue"></css-pixel-coercion>
   </section>
 </section>
