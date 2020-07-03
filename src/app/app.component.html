@@ -1,0 +1,22 @@
+<h1>@angular/cdk/coercion</h1>
+<section>
+  <h2>Array Coercion</h2>
+  <section>
+    <h3>Array: String</h3>
+    <array-coercion
+      [strings]="['array item 1', 'array item 2']"
+    ></array-coercion>
+  </section>
+  <section>
+    <h3>Single Value: String</h3>
+    <array-coercion strings="single item"></array-coercion>
+  </section>
+  <section>
+    <h3>Array: Custom Type (Person)</h3>
+    <array-coercion [persons]="[person1, person2]"></array-coercion>
+  </section>
+  <section>
+    <h3>Single Value: Custom Type (Person)</h3>
+    <array-coercion [persons]="person3"></array-coercion>
+  </section>
+</section>
