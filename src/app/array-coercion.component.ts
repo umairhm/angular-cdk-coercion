@@ -5,7 +5,18 @@ import { Person } from './person.interface';
 
 @Component({
   selector: 'array-coercion',
-  templateUrl: './array-coercion.component.html'
+  template: `
+    <ul>
+      <li *ngFor="let item of coercedStringArray">
+        This is {{ item }}
+      </li>
+    </ul>
+    <ul>
+      <li *ngFor="let person of coercedPersonArray">
+        {{ person.name }} is {{person.age}} years old
+      </li>
+    </ul>
+  `
 })
 export class ArrayCoercionComponent  {
   /* Start: Example code for an array of strings */
