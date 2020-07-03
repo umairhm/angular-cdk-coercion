@@ -27,8 +27,12 @@
 <section class="wrapper" id="boolean-coercion">
   <h2>Boolean Coercion</h2>
   <section>
-    <h3>boolean</h3>
-    <boolean-coercion [someFlag]="booleanValue"></boolean-coercion>
+    <h3>boolean - true</h3>
+    <boolean-coercion [someFlag]="booleanTrue"></boolean-coercion>
+  </section>
+  <section>
+    <h3>boolean - false</h3>
+    <boolean-coercion [someFlag]="booleanFalse"></boolean-coercion>
   </section>
   <section>
     <h3>string - true</h3>
@@ -41,6 +45,10 @@
   <section>
     <h3>string - random</h3>
     <boolean-coercion someFlag="random"></boolean-coercion>
+  </section>
+  <section>
+    <h3>number</h3>
+    <boolean-coercion someFlag="100"></boolean-coercion>
   </section>
   <section>
     <h3>null</h3>

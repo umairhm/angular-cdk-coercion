@@ -24,7 +24,8 @@ export class AppComponent  {
   };
 
   // boolean coercion data
-  booleanValue = true;
+  booleanTrue = true;
+  booleanFalse = false;
   nullValue = null;
   undefinedValue = undefined;
 }

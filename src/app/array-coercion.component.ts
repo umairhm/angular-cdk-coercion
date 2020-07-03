@@ -7,12 +7,12 @@ import { Person } from './person.interface';
   selector: 'array-coercion',
   template: `
     <ul>
-      <li *ngFor="let item of coercedStringArray">
+      <li *ngFor="let item of strings">
         This is {{ item }}
       </li>
     </ul>
     <ul>
-      <li *ngFor="let person of coercedPersonArray">
+      <li *ngFor="let person of persons">
         {{ person.name }} is {{person.age}} years old
       </li>
     </ul>
@@ -20,27 +20,24 @@ import { Person } from './person.interface';
 })
 export class ArrayCoercionComponent  {
   // Declare private properties to hold coerced arrays
-  private _coercedStringArray: Array<string>;
-  private _coercedPersonArray: Array<Person>;
+  private _stringArray: Array<string>;
+  private _personArray: Array<Person>;
 
-  // Allow both singular and array values to be passed
-  // Use coerceArray method to convert singular to array
+  // Use getters to return private properties
+  // Use setters to call coerceArray method and convert passed values to arrays
   @Input()
-  set strings(val: string | Array<string>) {
-    this._coercedStringArray = coerceArray(val);
+  get strings(): Array<string> {
+    return this._stringArray;
+  }
+  set strings(val: Array<string>) {
+    this._stringArray = coerceArray(val);
   }
 
   @Input()
-  set persons(val: Person | Array<Person>) {
-    this._coercedPersonArray = coerceArray(val);
+  get persons(): Array<Person> {
+    return this._personArray;
   }
-  
-  // Use getters to return coerced arrays to be used in templates
-  get coercedStringArray(): Array<string> {
-    return this._coercedStringArray;
-  }
-
-  get coercedPersonArray(): Array<Person> {
-    return this._coercedPersonArray;
+  set persons(val: Array<Person>) {
+    this._personArray = coerceArray(val);
   }
 }
