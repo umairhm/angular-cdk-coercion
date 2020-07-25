@@ -5,25 +5,40 @@ import { coerceElement } from '@angular/cdk/coercion';
   selector: 'element-coercion',
   template: `
     <div>
-      <span>Is ElementRef: {{isElementRef}}</span>
-      <div [innerHTML]="element.innerHTML"></div>
+      <p><strong>elementOne</strong></p>
+      <div [innerHTML]="elementOne.innerHTML"></div>
+      <p><strong>coercedElementTwo</strong></p>
+      <div [innerHTML]="coercedElementTwo.innerHTML"></div>
     </div>
   `
 })
 export class ElementCoercionComponent  {
-  // Declare private properties to hold coerced element reference
-  private _coercedElement: Element;
+  // In the following code, `@Input elementOne` will NOT work with strict type checking
+  // But we'll make the `@Input elementTwo` to work with strict type checking as well
+  
+  // Declare private properties to hold coerced elements
+  private _elementOne: Element;
+  private _elementTwo: Element;
 
-  isElementRef = false;
-
-  // Use getters to return private property
-  // Use setters to call coerceElement method and convert passed value to native element
-  @Input()
-  get element(): Element {
-    return this._coercedElement;
+  // We have to separate this getter and name it differently to be used in the template
+  // This works in combination with the `@Input set elementTwo` defined on line 36
+  get coercedElementTwo(): Element {
+    return this._elementTwo;
   }
-  set element(val: Element) {
-    this.isElementRef = val instanceof ElementRef;
-    this._coercedElement = coerceElement(val);
+
+  // Use setter to call coerceElement method and convert passed value to Element
+  @Input()
+  get elementOne(): Element {
+    return this._elementOne;
+  }
+  set elementOne(val: Element) {
+    this._elementOne = coerceElement(val);
+  }
+
+  // Note that the val parameter excepts value of type 'Element | ElementRef'
+  // We have to do this for strict type checking to work properly
+  @Input()
+  set elementTwo(val: Element | ElementRef) {
+    this._elementTwo = coerceElement(val);
   }
 }

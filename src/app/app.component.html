@@ -6,7 +6,7 @@
   <li><a href="#element-coercion">Element Coercion</a></li>
   <li><a href="#number-coercion">Number Coercion</a></li>
 </ul>
-<section class="wrapper" id="array-coercion">
+<!-- <section class="wrapper" id="array-coercion">
   <h2>Array Coercion</h2>
   <section>
     <h3>Array&lt;string&gt;</h3>
@@ -59,7 +59,7 @@
   </section>
   <section>
     <h3>object</h3>
-    <boolean-coercion  [flagTwo]="person2"></boolean-coercion>
+    <boolean-coercion [flagTwo]="person2"></boolean-coercion>
   </section>
   <section>
     <h3>null</h3>
@@ -88,19 +88,14 @@
     <h3>object</h3>
     <css-pixel-coercion [paddingX]="'1em'" [paddingY]="person1"></css-pixel-coercion>
   </section>
-</section>
-<!-- <section class="wrapper" id="element-coercion">
+</section> -->
+<section class="wrapper" id="element-coercion">
   <h2>Element Coercion</h2>
   <section>
-    <h3>HTMLElement</h3>
-    <element-coercion [element]="htmlElement"></element-coercion>
-  </section>
-  <section>
-    <h3>ElementRef</h3>
-    <element-coercion [element]="elementRef"></element-coercion>
+    <element-coercion [elementOne]="htmlElement" [elementTwo]="elementRef"></element-coercion>
   </section>
 </section>
-<section class="wrapper" id="number-coercion">
+<!-- <section class="wrapper" id="number-coercion">
   <h2>Number Coercion</h2>
   <section>
     <h3>number</h3>
