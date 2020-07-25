@@ -16,7 +16,7 @@
   </section>
   <section>
     <h3>string</h3>
-    <array-coercion strings="single item"></array-coercion>
+    <array-coercion [strings]="['single item']"></array-coercion>
   </section>
   <section>
     <h3>Array&lt;Person&gt;</h3>
@@ -31,61 +31,65 @@
   <h2>Boolean Coercion</h2>
   <section>
     <h3>boolean - true</h3>
-    <boolean-coercion [someFlag]="booleanTrue"></boolean-coercion>
+    <boolean-coercion [flagOne]="booleanTrue" [flagTwo]="booleanTrue"></boolean-coercion>
   </section>
   <section>
     <h3>boolean - false</h3>
-    <boolean-coercion [someFlag]="booleanFalse"></boolean-coercion>
+    <boolean-coercion [flagOne]="booleanFalse" [flagTwo]="booleanFalse"></boolean-coercion>
   </section>
   <section>
     <h3>string - input name only</h3>
-    <boolean-coercion someFlag></boolean-coercion>
+    <boolean-coercion flagTwo></boolean-coercion>
   </section>
   <section>
     <h3>string - true</h3>
-    <boolean-coercion someFlag="true"></boolean-coercion>
+    <boolean-coercion flagTwo="true"></boolean-coercion>
   </section>
   <section>
     <h3>string - false</h3>
-    <boolean-coercion someFlag="false"></boolean-coercion>
+    <boolean-coercion flagTwo="false"></boolean-coercion>
   </section>
   <section>
     <h3>string - random</h3>
-    <boolean-coercion someFlag="random"></boolean-coercion>
+    <boolean-coercion flagTwo="random"></boolean-coercion>
   </section>
   <section>
     <h3>number</h3>
-    <boolean-coercion someFlag="100"></boolean-coercion>
+    <boolean-coercion flagTwo="100"></boolean-coercion>
+  </section>
+  <section>
+    <h3>object</h3>
+    <boolean-coercion  [flagTwo]="person2"></boolean-coercion>
   </section>
   <section>
     <h3>null</h3>
-    <boolean-coercion [someFlag]="nullValue"></boolean-coercion>
+    <boolean-coercion [flagOne]="nullValue" [flagTwo]="nullValue"></boolean-coercion>
   </section>
   <section>
     <h3>undefined</h3>
-    <boolean-coercion [someFlag]="undefinedValue"></boolean-coercion>
+    <boolean-coercion [flagOne]="undefinedValue" [flagTwo]="undefinedValue"></boolean-coercion>
   </section>
 </section>
 <section class="wrapper" id="css-pixel-coercion">
   <h2>CSS Pixel Coercion</h2>
   <section>
     <h3>10px</h3>
-    <css-pixel-coercion [cssPixel]="'10px'"></css-pixel-coercion>
+    <css-pixel-coercion [paddingX]="'10px'" [paddingY]="'10px'"></css-pixel-coercion>
   </section>
   <section>
     <h3>10</h3>
-    <css-pixel-coercion [cssPixel]="10"></css-pixel-coercion>
+    <css-pixel-coercion [paddingX]="'10px'" [paddingY]="10"></css-pixel-coercion>
   </section>
   <section>
     <h3>1em</h3>
-    <css-pixel-coercion [cssPixel]="'1em'"></css-pixel-coercion>
+    <css-pixel-coercion [paddingX]="'1em'" [paddingY]="'1rem'"></css-pixel-coercion>
   </section>
   <section>
-    <h3>null</h3>
-    <css-pixel-coercion [cssPixel]="nullValue"></css-pixel-coercion>
+    <h3>object</h3>
+    <css-pixel-coercion [paddingX]="'1em'" [paddingY]="person1"></css-pixel-coercion>
   </section>
 </section>
-<section class="wrapper" id="element-coercion">
+<!-- <section class="wrapper" id="element-coercion">
   <h2>Element Coercion</h2>
   <section>
     <h3>HTMLElement</h3>
@@ -114,4 +118,4 @@
     <h3>undefined</h3>
     <number-coercion [count]="undefinedValue"></number-coercion>
   </section>
-</section>
+</section> -->
