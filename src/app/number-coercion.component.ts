@@ -4,20 +4,43 @@ import { coerceNumberProperty } from '@angular/cdk/coercion';
 @Component({
   selector: 'number-coercion',
   template: `
-    This is a coerced number: <strong>{{count}}</strong>
+    <div>
+      <p><strong>numberOne</strong></p>
+      <div>{{ numberOne }}</div>
+      <p><strong>numberTwo</strong></p>
+      <div>{{ coercedNumberTwo }}</div>
+    </div>
   `
 })
 export class NumberCoercionComponent  {
-  // Declare private properties to hold coerced number value
-  private _coercedNumber: number;
+  // In the following code, `@Input numberOne` will NOT work with strict type checking
+  // But we'll make the `@Input numberTwo` to work with strict type checking as well
+  
+  // Declare private properties to hold coerced numbers
+  private _numberOne: number;
+  private _numberTwo: number;
 
-  // Use getters to return private property
-  // Use setters to call coerceNumberProperty method and convert passed value to number
-  @Input()
-  get count(): number {
-    return this._coercedNumber;
+  // We have to separate this getter and name it differently to be used in the template
+  // This works in combination with the `@Input set numberTwo` defined on line 36
+  get coercedNumberTwo(): number {
+    return this._numberTwo;
   }
-  set count(val: number) {
-    this._coercedNumber = coerceNumberProperty(val);
+
+  // Use setter to call coerceNumberProperty method and convert passed value to number
+  @Input()
+  get numberOne(): number {
+    return this._numberOne;
+  }
+  set numberOne(val: number) {
+    this._numberOne = coerceNumberProperty(val);
+  }
+
+  // Note that the val parameter excepts value of type 'any'
+  // We have to do this for strict type checking to work properly
+  // 'coerceNumberProperty' method takes a second parameter
+  // The second parameter is the fallback or default value
+  @Input()
+  set numberTwo(val: any) {
+    this._numberTwo = coerceNumberProperty(val, 12);
   }
 }

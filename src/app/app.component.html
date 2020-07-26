@@ -88,29 +88,29 @@
     <h3>object</h3>
     <css-pixel-coercion [paddingX]="'1em'" [paddingY]="person1"></css-pixel-coercion>
   </section>
-</section> -->
+</section>
 <section class="wrapper" id="element-coercion">
   <h2>Element Coercion</h2>
   <section>
     <element-coercion [elementOne]="htmlElement" [elementTwo]="elementRef"></element-coercion>
   </section>
-</section>
-<!-- <section class="wrapper" id="number-coercion">
+</section> -->
+<section class="wrapper" id="number-coercion">
   <h2>Number Coercion</h2>
   <section>
     <h3>number</h3>
-    <number-coercion [count]="10"></number-coercion>
+    <number-coercion [numberOne]="10" [numberTwo]="20"></number-coercion>
   </section>
   <section>
     <h3>strings</h3>
-    <number-coercion count="10"></number-coercion>
+    <number-coercion [numberOne]="10" numberTwo="20"></number-coercion>
   </section>
   <section>
     <h3>null</h3>
-    <number-coercion [count]="nullValue"></number-coercion>
+    <number-coercion [numberOne]="nullValue" [numberTwo]="nullValue"></number-coercion>
   </section>
   <section>
     <h3>undefined</h3>
-    <number-coercion [count]="undefinedValue"></number-coercion>
+    <number-coercion [numberOne]="undefinedValue" [numberTwo]="undefinedValue"></number-coercion>
   </section>
-</section> -->
+</section>
